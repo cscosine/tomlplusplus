@@ -1,0 +1,22 @@
+{
+    "version": 10,
+    "$comment": "csCMake presets, sibling layout (presets/layout/sibling.json), plus the values of this library: toml.hpp as released, not regenerated at configure",
+    "include": [
+        "${sourceParentDir}/csCMake/presets/csCMakeProjectSetup.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "cscmake-project-setup",
+            "hidden": true,
+            "inherits": "cscmake-common-project-setup",
+            "environment": {
+                "CSCMAKE_WORKSPACE_ROOT": "${sourceParentDir}",
+                "CSCMAKE_ROOT": "$env{CSCMAKE_WORKSPACE_ROOT}/csCMake",
+                "CSCMAKE_BUILD_SUB_DIR": "$env{CSCMAKE_CSV1_SUB_DIR}"
+            },
+            "cacheVariables": {
+                "tomlplusplus_REGENERATE": "OFF"
+            }
+        }
+    ]
+}
